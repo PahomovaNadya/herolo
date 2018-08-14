@@ -1,0 +1,72 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body {
+    font-family: Calibri, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+/* ========= PAGINATOR ============= */
+.ui-paginator .ui-paginator-page.ui-state-active {
+    background: #7b3aae;
+    color: #ffffff;
+    border-color: #7b3aae;
+  }
+  .ui-paginator .ui-paginator-current, .ui-paginator .ui-paginator-first, .ui-paginator .ui-paginator-last, .ui-paginator .ui-paginator-next, .ui-paginator .ui-paginator-page, .ui-paginator .ui-paginator-pages, .ui-paginator .ui-paginator-prev {
+    display: inline-block;
+    padding: .125em .375em;
+    zoom: 1;
+    margin-left: .063em;
+    margin-right: .063em;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  .ui-corner-all {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .ui-state-default {
+    border: 1px solid #d6d6d6;
+    background: #ffffff;
+    color: #555555;
+  }
+  a {
+    text-decoration: none;
+    color: #7b3aae;
+  }
+  /*.ui-paginator {
+    margin: 0 auto;
+    text-align: center;
+    padding: .125em;
+    width: 75%;
+    height: 30px;
+    -position: relative;
+    -bottom: 0vw;
+  }*/
+  .ui-paginator {
+    text-align: center;
+    padding: .125em;
+    width: 200px;
+    height: 30px;
+    display: inline-block;
+  }
+  .pi {
+    display: inline-block;
+    font: 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }  
+  .pi-step-backward:before {
+    content: "\f048";
+  }
+  .pi-caret-left:before {
+    content: "\f04a";
+  }
+  .pi-caret-right:before {
+    content: "\f04e";
+  }
+  .pi-step-forward:before {
+    content: "\f051";
+  }
+  /* ========= END PAGINATOR ========= */
