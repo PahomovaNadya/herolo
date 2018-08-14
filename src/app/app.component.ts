@@ -61,6 +61,7 @@ export class AppComponent {
     this.bookInfoD = this.buildArray(act ,itemResult, JSON.parse(localStorage.getItem('currentBooks')));
     localStorage.setItem('currentBooks', JSON.stringify(this.bookInfoD));
     this.bookInfoN = this.workPaginator(this.bookInfoD, 0, this.countArrPage);
+    this.countArr = this.bookInfoD.length;
   }
   deleteResult(itemId: string) {
     let itemDelete = this.bookInfoN.filter(g => {

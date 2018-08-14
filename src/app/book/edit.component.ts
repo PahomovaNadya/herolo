@@ -18,11 +18,9 @@ export class EditComponent implements OnInit {
     const dateRegEx = new RegExp('([0-9]{2})+\/+([0-9]{2})+\/+([0-9]{4})');
     return dateRegEx.test(c.value) ? null : {date: true}
   };
-
   ngOnInit() {
     this.initForm();
   }
-  
   onSubmit() {
     const controls = this.myFirstReactiveForm.controls;
 
@@ -40,10 +38,10 @@ export class EditComponent implements OnInit {
     return result;
   }
   validDate(): boolean  {
-    var arrDt = (document.getElementById("mydate").value).split("/");
+    var arrDt = ((<HTMLInputElement>document.getElementById("mydate")).value).split("/");
     const controlDt = this.myFirstReactiveForm.controls["mydate"];
     var flg = controlDt.invalid && controlDt.touched;
-    if( document.getElementById("mydate").value != "" ){
+    if( (<HTMLInputElement>document.getElementById("mydate")).value != "" ){
       flg = true;
       if(arrDt[0].length==2 && arrDt[1].length==2 && arrDt[2].length==4 ) {
         if( (parseInt(arrDt[2])%4==0 && parseInt(arrDt[1])==2 && parseInt(arrDt[0])<30) || (parseInt(arrDt[2])%4!=0 && parseInt(arrDt[1])==2 && parseInt(arrDt[0])<29) ){
@@ -51,6 +49,9 @@ export class EditComponent implements OnInit {
         } else {
           if(parseInt(arrDt[1]) < 13 && parseInt(arrDt[1]) < 31 && parseInt(arrDt[1])!=2) {
             flg = false;
+          }
+          else{
+            (<HTMLInputElement>document.getElementById("mydate")).focus();
           }
         }
       }
