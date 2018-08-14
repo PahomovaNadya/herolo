@@ -1,0 +1,44 @@
+<form [formGroup]="myFirstReactiveForm" (submit)="onSubmit()">
+  <input type="hidden" id="id" formControlName="id" />
+  <input type="hidden" id="imagesmallurl" formControlName="imagesmallurl" />
+  <input type="hidden" id="imagebigurl" formControlName="imagebigurl" />
+  <label for="title">Book title:</label>
+	<input type="text" id="title" formControlName="title" />
+  <div class="error" *ngIf="isControlInvalid('title')">
+    The book title field can not be empty
+  </div>
+	<br/>
+  <label for="author">Author:</label>
+	<input type="text" id="author" formControlName="author" />
+  <div class="error" *ngIf="isControlInvalid('author')">
+    The author field can not be empty
+  </div>
+  <br/>
+  <label for="mydate">Release date <span class="blueTxt">(dd/mm/yyyy)</span>:</label>
+  <input type="text" id="mydate" formControlName="mydate" value="" (change)="validDate()" />
+  <div class="error" *ngIf="validDate()">
+    The release date field can not be empty. Format date dd/mm/yyyy.
+  </div>
+  <br/>
+	<label for="description">Content:</label>
+	<textarea type="text" id="description" formControlName="description"></textarea>
+    <div class="error" *ngIf="isControlInvalid('description')">
+      The content field can not be empty
+  </div>
+  <br/>
+  <button 
+    mat-raised-button color="primary"
+    matBadge="8" 
+    matBadgePosition="before" 
+    matBadgeColor="accent" 
+    type="submit"
+  >send</button>
+  <button 
+    mat-raised-button color="primary"
+    matBadge="8" 
+    matBadgePosition="before" 
+    matBadgeColor="accent" 
+    type="text"
+    (click)="cancelBook()"
+  >cancel</button>
+</form>

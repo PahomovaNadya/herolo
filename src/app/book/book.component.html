@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="card col s12">
+    <div class="card-image col s3">
+      <img src={{item.imagesmallurl}} />
+    </div> 
+    <div class="card-content col s9">
+      <div class="card-title">{{item.title}}</div>
+      <div class="card-author">{{item.author}}</div>
+      <div class="card-date">{{item.mydate}}</div><br />
+      <hr />
+      <p>{{item.description}}</p>
+      <hr />
+      <button mat-raised-button color="primary"
+      matBadge="8" matBadgePosition="before" matBadgeColor="accent" (click)="editBook(item.id)">Edit</button>
+      &nbsp;&nbsp;&nbsp;
+      <button mat-raised-button color="primary"
+      matBadge="6" matBadgePosition="before" matBadgeColor="accent" (click)="deleteBook(item.id)">Delete</button>
+    </div>
+  </div>
+</div>

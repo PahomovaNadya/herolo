@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="container">
+  <app-book-list 
+  *ngFor="let book of bookInfoN"
+  [item]="book"
+  ></app-book-list>
+</div>
+<div class="bootomLine" [style.visibility]="isDivVisible ? 'visible' : 'hidden'">
+  <div>
+    <div class="ui-paginator ui-widget ui-widget-header ui-unselectable-text ui-helper-clearfix ng-star-inserted">
+      <p-paginator [rows]="countArrPage" [totalRecords]="countArr" pageLinkSize="3" (onPageChange)="paginate($event)"></p-paginator>
+    </div>
+    <div class="countEl">
+      <select #c (change)=selectItemCount(c.value)>
+        <option *ngFor="let itemCount of itensCount" [value]="itemCount" [selected]="(itemCount==countArrPage) ? 'selected' : ''">
+            {{itemCount}}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+<div id="openModal" class="modalDialog">
+  <div> 
+    <a href="#close" title="Close" class="close">X</a>
+    
+    <app-edit
+    *ngFor="let bookSel of selectBook"
+    [itemSelect]="bookSel" 
+    ></app-edit>
+  </div> 
+</div> 
